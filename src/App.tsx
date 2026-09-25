@@ -96,7 +96,7 @@ export default function App() {
             <div>
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider">LIVE FLEET DISPATCH ACTIVE</span>
+                <span className="text-xs font-semibold tracking-wider font-mono text-emerald-400 font-bold uppercase tracking-wider">LIVE FLEET DISPATCH ACTIVE</span>
               </div>
               <h1 className="text-base font-bold text-white leading-none">MOBILE DETAIL DISPATCH OS</h1>
             </div>
@@ -140,7 +140,7 @@ export default function App() {
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-bold font-mono text-white">{rig.name}</span>
-                    <span className={`text-[10px] font-mono px-2 py-0.5 rounded font-bold ${
+                    <span className={`text-xs font-semibold tracking-wider font-mono px-2 py-0.5 rounded font-bold ${
                       rig.currentStatus === 'ON_SITE_DETAILING' ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/30' :
                       rig.currentStatus === 'EN_ROUTE' ? 'bg-amber-500/10 text-amber-400 border border-amber-500/30' :
                       'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
@@ -149,12 +149,12 @@ export default function App() {
                     </span>
                   </div>
 
-                  <p className="text-xs text-zinc-400 flex items-center gap-1.5 mb-3">
+                  <p className="text-base text-zinc-200 leading-relaxed flex items-center gap-1.5 mb-3">
                     <MapPin className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
                     <span>{rig.zone}</span>
                   </p>
 
-                  <div className="space-y-1.5 text-[11px] font-mono text-zinc-400 border-t border-zinc-800/80 pt-2">
+                  <div className="space-y-1.5 text-xs font-semibold font-mono text-zinc-400 border-t border-zinc-800/80 pt-2">
                     <div className="flex justify-between">
                       <span>Water Tank:</span>
                       <span className="text-cyan-400">{rig.waterLevel}</span>
@@ -166,8 +166,8 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="mt-3 pt-2 border-t border-zinc-800/80 flex items-center justify-between text-[11px] font-mono">
-                  <span className="text-zinc-500">Tech: {rig.driver}</span>
+                <div className="mt-3 pt-2 border-t border-zinc-800/80 flex items-center justify-between text-xs font-semibold font-mono">
+                  <span className="text-zinc-300">Tech: {rig.driver}</span>
                   <span className="text-emerald-400 font-bold">{rig.eta}</span>
                 </div>
               </div>
@@ -201,7 +201,7 @@ export default function App() {
                   >
                     <div>
                       <span className="text-xs font-bold font-mono text-white block mb-1">{pkg.title}</span>
-                      <p className="text-[11px] text-zinc-400 leading-relaxed">{pkg.desc}</p>
+                      <p className="text-xs font-semibold text-zinc-400 leading-relaxed">{pkg.desc}</p>
                     </div>
                     <div className="mt-4 pt-2 border-t border-zinc-800 flex items-center justify-between">
                       <span className="text-base font-extrabold font-mono text-emerald-400">${pkg.price}</span>
@@ -220,7 +220,7 @@ export default function App() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {/* Water Triage */}
                 <div>
-                  <label className="block text-[11px] font-mono text-zinc-400 uppercase mb-2">Water Source</label>
+                  <label className="block text-sm font-semibold font-mono text-zinc-400 uppercase mb-2">Water Source</label>
                   <div className="space-y-2">
                     <button
                       type="button"
@@ -248,7 +248,7 @@ export default function App() {
 
                 {/* Power Triage */}
                 <div>
-                  <label className="block text-[11px] font-mono text-zinc-400 uppercase mb-2">Electric Power</label>
+                  <label className="block text-sm font-semibold font-mono text-zinc-400 uppercase mb-2">Electric Power</label>
                   <div className="space-y-2">
                     <button
                       type="button"
@@ -276,7 +276,7 @@ export default function App() {
 
                 {/* Location Type */}
                 <div>
-                  <label className="block text-[11px] font-mono text-zinc-400 uppercase mb-2">Parking Location</label>
+                  <label className="block text-sm font-semibold font-mono text-zinc-400 uppercase mb-2">Parking Location</label>
                   <div className="space-y-2">
                     {[
                       { id: 'driveway', label: 'Private Driveway' },
@@ -320,7 +320,7 @@ export default function App() {
                     >
                       <div>
                         <span className="text-xs font-bold font-mono text-white block">{addon.name}</span>
-                        <span className="text-[10px] text-zinc-500 font-mono">+{addon.timeMins} mins • {addon.desc}</span>
+                        <span className="text-xs font-semibold tracking-wider text-zinc-300 font-mono">+{addon.timeMins} mins • {addon.desc}</span>
                       </div>
                       <span className="text-xs font-mono font-bold text-emerald-400 ml-3">+${addon.price}</span>
                     </button>
@@ -366,7 +366,7 @@ export default function App() {
 
               <form onSubmit={handleDispatchSubmit} className="space-y-3">
                 <div>
-                  <label className="block text-[10px] font-mono text-zinc-400 uppercase mb-1">Service Address</label>
+                  <label className="block text-sm font-semibold tracking-wider font-mono text-zinc-400 uppercase mb-1">Service Address</label>
                   <input
                     type="text"
                     required
@@ -377,7 +377,7 @@ export default function App() {
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-mono text-zinc-400 uppercase mb-1">Mobile Contact Line</label>
+                  <label className="block text-sm font-semibold tracking-wider font-mono text-zinc-400 uppercase mb-1">Mobile Contact Line</label>
                   <input
                     type="tel"
                     required
@@ -390,7 +390,7 @@ export default function App() {
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-extrabold text-xs uppercase tracking-wider transition shadow-lg shadow-emerald-500/20 mt-2"
+                  className="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-extrabold text-base font-semibold min-h-[44px] uppercase tracking-wider transition shadow-lg shadow-emerald-500/20 mt-2"
                 >
                   {submitted ? '✓ VAN DISPATCH CONFIRMED' : 'DISPATCH MOBILE DETAIL RIG'}
                 </button>
@@ -412,7 +412,7 @@ export default function App() {
             className="text-emerald-400 hover:underline flex items-center gap-1"
           >
             <span>Supervisor Portal</span>
-            <span className="text-zinc-500">[detail2026]</span>
+            <span className="text-zinc-300">[detail2026]</span>
           </button>
         </div>
       </div>
